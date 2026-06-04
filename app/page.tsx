@@ -46,39 +46,33 @@ const productSchema = {
 };
 
 /* ─────────────────────────────────────────────
-   Brand mark (Ramon Puente + Kenric Company)
+   Nav / footer brand: Ramon Puente by Kenric Company
 ───────────────────────────────────────────── */
-function BrandMark({
-  variant = "hero",
-}: {
-  variant?: "hero" | "nav" | "footer";
-}) {
-  const isHero = variant === "hero";
+function BrandMark({ variant = "nav" }: { variant?: "nav" | "footer" }) {
   const isNav = variant === "nav";
 
-  const nameClass = isHero
-    ? "text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight"
-    : isNav
-      ? "text-white font-bold text-sm lg:text-base tracking-tight"
-      : "text-white font-bold text-xl tracking-tight";
-
-  const logoClass = isHero
-    ? "text-2xl sm:text-3xl font-bold text-white tracking-tight"
-    : isNav
-      ? "text-base lg:text-lg font-bold text-white tracking-tight"
-      : "text-lg font-bold text-white tracking-tight";
-
   return (
-    <div className={isHero ? "space-y-3" : isNav ? "space-y-0.5 leading-tight" : "space-y-1"}>
-      {isHero ? (
-        <h1 className={nameClass}>Ramon Puente</h1>
-      ) : (
-        <p className={nameClass}>Ramon Puente</p>
-      )}
-      <p className={logoClass} aria-label="Kenric Company">
-        Kenric<span className="text-blue-400"> Company</span>
-      </p>
-    </div>
+    <p className="leading-tight">
+      <span
+        className={
+          isNav
+            ? "text-white font-bold text-sm lg:text-base tracking-tight"
+            : "text-white font-bold text-xl tracking-tight"
+        }
+      >
+        Ramon Puente
+      </span>
+      <span
+        className={
+          isNav
+            ? "text-slate-400 font-extralight text-[0.65rem] sm:text-xs lg:text-sm tracking-wide"
+            : "text-slate-500 font-extralight text-xs sm:text-sm tracking-wide"
+        }
+      >
+        {" "}
+        by Kenric Company
+      </span>
+    </p>
   );
 }
 
@@ -299,7 +293,7 @@ function Navbar({ onPolicyOpen }: { onPolicyOpen: (k: PolicyKey) => void }) {
           <a
             href="#"
             className="hover:opacity-90 transition-opacity"
-            aria-label="Ramon Puente, Kenric Company home"
+            aria-label="Ramon Puente by Kenric Company home"
           >
             <BrandMark variant="nav" />
           </a>
@@ -401,12 +395,11 @@ function HeroSection() {
           <div className="space-y-8">
             <div>
               <span className="section-label">Financial Engineering & Advisory</span>
-              <BrandMark variant="hero" />
-              <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-200 leading-snug tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
                 Advanced Financial{" "}
                 <span className="text-blue-400">Modeling</span> &amp; Data{" "}
                 <span className="text-blue-400">Architecture</span>
-              </h2>
+              </h1>
             </div>
             <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-xl">
               Engineering institutional-grade treasury frameworks, automated forecasting workbooks,
