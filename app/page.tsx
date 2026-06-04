@@ -595,8 +595,10 @@ function ProductsSection() {
               {/* CTA */}
               <div className="mt-8">
                 <a
-                  href=""
+                  href="https://buy.stripe.com/9B6aEXgAG65v5O77E7eME01"
                   className="btn-enterprise w-full"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Purchase 13-Week Dynamic Cash Flow Forecasting Model for $150.00 USD"
                 >
                   Purchase Template — $150.00
