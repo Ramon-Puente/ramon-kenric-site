@@ -37,7 +37,29 @@ In `app/page.tsx`, find the **"Purchase Template"** button:
   Purchase Template — $150.00
 ```
 
-Paste your Stripe Payment Link URL into the empty `href=""`.
+Paste your Stripe Payment Link URL into the empty `href=""` on the Purchase Template button.
+
+### Post-purchase redirect (Stripe Dashboard)
+
+1. **Payment Links** → edit your product link → **After payment**
+2. Select **Don't show confirmation page**
+3. **Redirect URL:**
+
+   ```
+   https://ramon.kenriccompany.com/success/
+   ```
+
+4. Save
+
+### Excel workbook (required before downloads work)
+
+Place your sanitized file at:
+
+```
+public/assets/dl_7f3b9c2a_x91/13_week_cashflow_df761a.xlsx
+```
+
+Then commit, push, and redeploy. Success page: `https://ramon.kenriccompany.com/success/`
 
 ---
 

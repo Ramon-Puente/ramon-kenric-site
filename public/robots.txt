@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /assets/dl_7f3b9c2a_x91/
