@@ -41,6 +41,43 @@ Paste your Stripe Payment Link URL into the empty `href=""`.
 
 ---
 
+## Deploy to GitHub Pages (go live)
+
+### 1. Enable GitHub Pages (one-time, in the browser)
+
+1. Open **https://github.com/Ramon-Puente/ramon-kenric-site/settings/pages**
+2. Under **Build and deployment** → **Source**, choose **GitHub Actions** (not “Deploy from a branch”).
+3. Save. The workflow in `.github/workflows/deploy-github-pages.yml` runs on every push to `main`.
+
+### 2. Trigger the first deploy
+
+Push to `main` (or run the workflow manually: **Actions** → **Deploy to GitHub Pages** → **Run workflow**).
+
+When the workflow finishes, the site is published. Default URL:
+
+**https://ramon-puente.github.io/ramon-kenric-site/**
+
+### 3. Custom domain `ramon.kenriccompany.com` (recommended)
+
+The repo includes `public/CNAME` so the built site advertises your domain.
+
+1. On the same **Pages** settings page, under **Custom domain**, enter: `ramon.kenriccompany.com` → **Save**.
+2. In **Cloudflare** (DNS for `kenriccompany.com`), add:
+   - **Type:** `CNAME`
+   - **Name:** `ramon`
+   - **Target:** `ramon-puente.github.io`
+   - **Proxy status:** DNS only (grey cloud) until GitHub shows the domain as verified; you can enable proxy later if needed.
+3. Wait a few minutes for DNS and GitHub’s HTTPS certificate (check **Pages** settings for a green check).
+
+Live URL: **https://ramon.kenriccompany.com**
+
+### 4. Check deployment status
+
+- **Actions:** https://github.com/Ramon-Puente/ramon-kenric-site/actions  
+- Green check on **Deploy to GitHub Pages** = live.
+
+---
+
 ## Build & Deploy to Cloudflare Pages
 
 ### 1. Connect the GitHub repo in Cloudflare Pages
