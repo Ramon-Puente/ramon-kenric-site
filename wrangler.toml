@@ -1,13 +1,3 @@
 name = "ramon-kenric-site"
 compatibility_date = "2024-01-01"
-
-[env.production]
-name = "ramon-kenric-site"
-
-# Cloudflare Pages — static assets are served from the `out/` directory
-# produced by `next build` with `output: "export"` in next.config.ts.
-# No Workers runtime is required for a fully-static Next.js export.
-
-[[env.production.routes]]
-pattern = "ramon.kenriccompany.com/*"
-zone_name = "kenriccompany.com"
+pages_build_output_dir = "out"
